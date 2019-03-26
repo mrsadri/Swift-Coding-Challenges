@@ -53,7 +53,7 @@ private func secondArray(_ howMany : Int) ->  [[Int]] {
     return arrayStep2
 }
 
-func stringProducer (by input : String) -> [String] {
+func permutationsProducer (by input : String) -> Set<String> {
     var myArr : [String] = []
     for i in secondArray(input.count) {
         var myString = Array(input.reversed())
@@ -64,10 +64,10 @@ func stringProducer (by input : String) -> [String] {
         }
         myArr.append(newStr)
     }
-    //TODO : Add duplicate remover here
-    print(myArr.count)
-    return myArr
+    print("Total permutations: \(myArr.count)")
+    print("Duplicated members: \(myArr.count - Set(myArr).count)")
+    return Set(myArr)
 }
 
 
-print(stringProducer(by: "hisaM"))
+print("------------\nPermutations: \n \(permutationsProducer(by: "Masihs"))")
